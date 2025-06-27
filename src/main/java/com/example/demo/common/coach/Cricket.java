@@ -1,9 +1,9 @@
-package com.example.demo.rest;
+package com.example.demo.common.coach;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class CricketCoach implements Coach {
+public class Cricket implements Coach {
     @Override
     public String getDailyWorkout() {
         return "Sleep for all day today Champion!!!";
