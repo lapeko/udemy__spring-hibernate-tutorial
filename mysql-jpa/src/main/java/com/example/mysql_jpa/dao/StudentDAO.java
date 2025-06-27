@@ -4,4 +4,5 @@ import com.example.mysql_jpa.entity.Student;
 
 public interface StudentDAO {
     void save(Student student);
+    Student getById(int id);
 }

@@ -28,5 +28,9 @@ public class MysqlJpaApplication {
 		studentDAO.save(tempStudent);
 
 		System.out.printf("User: %s successfully saved%n", tempStudent);
+
+		var foundStudent = studentDAO.getById(1);
+
+		System.out.printf("Found user with id 1: %s%n", foundStudent);
 	}
 }
