@@ -1,16 +1,16 @@
 package com.example.demo.controller;
 
-import com.example.utils.Coach;
+import com.example.demo.rest.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Workout {
-    private final Coach coach;
+    private Coach coach;
 
     @Autowired
-    Workout(Coach coach) {
+    public void setCoach(Coach coach) {
         this.coach = coach;
     }
 
