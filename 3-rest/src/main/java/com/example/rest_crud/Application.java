@@ -1,4 +1,4 @@
-package com.example.__rest;
+package com.example.rest_crud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
