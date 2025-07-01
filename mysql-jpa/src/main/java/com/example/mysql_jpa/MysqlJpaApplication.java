@@ -16,15 +16,6 @@ public class MysqlJpaApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
-		return args -> {
-			var student = studentDAO.getById(1);
-			student.setLastName("Gm");
-			studentDAO.update(student);
-
-			var students = studentDAO.getAll();
-			for (Student s: students) {
-				System.out.println(s);
-			}
-		};
+		return args -> {};
 	}
 }

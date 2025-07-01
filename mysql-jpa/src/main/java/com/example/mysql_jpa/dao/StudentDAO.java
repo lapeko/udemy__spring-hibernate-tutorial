@@ -10,4 +10,6 @@ public interface StudentDAO {
     List<Student> getAll();
     List<Student> getByLastName(String lastName);
     void update(Student student);
+    void delete(int id);
+    void deleteAll();
 }
