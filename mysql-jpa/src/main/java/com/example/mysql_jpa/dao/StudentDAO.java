@@ -9,4 +9,5 @@ public interface StudentDAO {
     Student getById(int id);
     List<Student> getAll();
     List<Student> getByLastName(String lastName);
+    void update(Student student);
 }

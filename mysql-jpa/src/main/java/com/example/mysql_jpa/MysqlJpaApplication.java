@@ -17,10 +17,12 @@ public class MysqlJpaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
-			var allStudents = studentDAO.getAll();
+			var student = studentDAO.getById(1);
+			student.setLastName("Gm");
+			studentDAO.update(student);
 
-			System.out.println("All users:");
-			for (Student s: allStudents) {
+			var students = studentDAO.getAll();
+			for (Student s: students) {
 				System.out.println(s);
 			}
 		};
