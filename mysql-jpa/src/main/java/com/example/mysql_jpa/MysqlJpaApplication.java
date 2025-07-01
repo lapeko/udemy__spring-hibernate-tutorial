@@ -17,31 +17,12 @@ public class MysqlJpaApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return args -> {
-			saveStudent(studentDAO);
+			var allStudents = studentDAO.getAll();
+
+			System.out.println("All users:");
+			for (Student s: allStudents) {
+				System.out.println(s);
+			}
 		};
-	}
-
-	private void saveStudent(StudentDAO studentDAO) {
-		var tempStudent = new Student("Jefstafiy", "Gd", "gd@mail.com");
-
-		System.out.printf("Saving a user: %s%n", tempStudent);
-		studentDAO.save(tempStudent);
-
-		System.out.printf("User: %s successfully saved%n", tempStudent);
-
-		var foundStudent = studentDAO.getById(2);
-
-		System.out.printf("Found user with id 1: %s%n", foundStudent);
-
-		var allStudents = studentDAO.getAll();
-
-		System.out.println("All users:");
-		for (Student s: allStudents) {
-			System.out.println(s);
-		}
-
-		var lastName = "Gd";
-		var gd = studentDAO.getByLastName(lastName);
-		System.out.printf("Found user with lastName: %s is %s", lastName, gd);
 	}
 }
