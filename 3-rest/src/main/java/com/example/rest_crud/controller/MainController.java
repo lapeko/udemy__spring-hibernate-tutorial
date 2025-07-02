@@ -41,4 +41,11 @@ public class MainController {
         var response = new StudentErrorResponse(status, error.getMessage(), System.currentTimeMillis());
         return new ResponseEntity<>(response, status);
     }
+
+    @ExceptionHandler
+    public ResponseEntity<StudentErrorResponse> handleException(Exception error) {
+        var status = HttpStatus.BAD_REQUEST;
+        var response = new StudentErrorResponse(status, error.getMessage(), System.currentTimeMillis());
+        return new ResponseEntity<>(response, status);
+    }
 }
